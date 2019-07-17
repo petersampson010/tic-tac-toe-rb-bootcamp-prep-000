@@ -107,9 +107,8 @@ def winner(board)
   WIN_COMBINATIONS.each do |combo|
     if combo.all? {|i| board[i] == "X"}
       winner = "X"
-    else if combo.all? {|i| board[i] == "O"}
+    else
       winner = "O"
-    else 
     end 
   end 
   return winner 
