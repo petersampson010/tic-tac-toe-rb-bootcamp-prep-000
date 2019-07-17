@@ -103,16 +103,19 @@ def over?(board)
 end 
 
 def winner(board)
-  winner = nil 
-  WIN_COMBINATIONS.each do |combo|
-    if combo.all? {|i| board[i] == "X"}
-      winner = "X"
-    else
-      winner = "O"
+  index = []
+  index = won?(board)
+  if index == false
+    return nil
+  else 
+    if board[index[0]] == "X"
+      return "X"
+    else 
+      return "O"
     end 
   end 
-  return winner 
 end 
+
 
 def play(board)
   while !over?(board)
